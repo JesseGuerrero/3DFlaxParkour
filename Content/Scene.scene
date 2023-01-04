@@ -2060,12 +2060,6 @@
 }
 		},
 		{
-			"ID": "da307f594f3f902e37801ca36103a2cb",
-			"TypeName": "Game.InputController",
-			"ParentID": "3d5d480e47c4e5aa7108ddaad0c7ed67",
-			"V": {}
-		},
-		{
 			"ID": "e1694e1b46f5f1c4c1c378b911692591",
 			"TypeName": "FlaxEngine.EmptyActor",
 			"ParentID": "3d5d480e47c4e5aa7108ddaad0c7ed67",
@@ -2250,83 +2244,26 @@
 		},
 		{
 			"ID": "3ed75ed84d83ae73cf64978c8d99e69e",
-			"TypeName": "FlaxEngine.RigidBody",
-			"ParentID": "74a68a984824b4510d12589f199ad68f",
-			"Name": "RigidBody",
-			"OverrideMass": true
+			"PrefabID": "b060bf194ad2ac25e4c29b9f4295715b",
+			"PrefabObjectID": "b73ac3634b9ed37da0daf68969721e1e",
+			"ParentID": "74a68a984824b4510d12589f199ad68f"
 		},
 		{
 			"ID": "7e69476b4faa4f00ef90098c23f94b9f",
-			"TypeName": "FlaxEngine.StaticModel",
+			"PrefabID": "b060bf194ad2ac25e4c29b9f4295715b",
+			"PrefabObjectID": "7c89065d408d379aa235c7869bb9ea81",
 			"ParentID": "3ed75ed84d83ae73cf64978c8d99e69e",
-			"Name": "Cube",
-			"Transform": {
-				"Translation": {
-					"X": 530.2399291992188,
-					"Y": 74.4561767578125,
-					"Z": -420.2071228027344
-				},
-				"Scale": {
-					"X": 1.0,
-					"Y": 0.3100000023841858,
-					"Z": 1.0
-				}
-			},
-			"Model": "b43f0f8f4aaba3f3156896a5a22ba493",
 			"Buffer": {
 				"Entries": [
-					{
-						"Material": "00000000000000000000000000000000",
-						"ShadowsMode": 3,
-						"Visible": true,
-						"ReceiveDecals": true
-					}
+					{}
 				]
 			}
 		},
 		{
-			"ID": "d95bfc5b4722f36527a9c9a95f341882",
-			"TypeName": "FlaxEngine.BoxCollider",
-			"ParentID": "3ed75ed84d83ae73cf64978c8d99e69e",
-			"Name": "BoxCollider"
-		},
-		{
-			"ID": "9ad5fadf4c44718f3a8b248d62056ad0",
-			"TypeName": "FlaxEngine.RigidBody",
-			"ParentID": "74a68a984824b4510d12589f199ad68f",
-			"Name": "RigidBody 0",
-			"OverrideMass": true,
-			"Constraints": 63,
-			"EnableGravity": false
-		},
-		{
-			"ID": "73e39515450ffbdc4c459fac7ccb945c",
-			"TypeName": "FlaxEngine.StaticModel",
-			"ParentID": "9ad5fadf4c44718f3a8b248d62056ad0",
-			"Name": "Cube",
-			"Transform": {
-				"Translation": {
-					"X": 530.2399291992188,
-					"Y": 156.41409301757813,
-					"Z": -266.32940673828127
-				},
-				"Scale": {
-					"X": 1.0,
-					"Y": 0.3100000023841858,
-					"Z": 1.0
-				}
-			},
-			"Model": "b43f0f8f4aaba3f3156896a5a22ba493",
-			"Buffer": {
-				"Entries": [
-					{
-						"Material": "00000000000000000000000000000000",
-						"ShadowsMode": 3,
-						"Visible": true,
-						"ReceiveDecals": true
-					}
-				]
-			}
+			"ID": "bd30d71b4fc5f7eaba7b6d8c846b69c4",
+			"PrefabID": "b060bf194ad2ac25e4c29b9f4295715b",
+			"PrefabObjectID": "ab1f3a884a1a27a6a2df918a97a7b79b",
+			"ParentID": "3ed75ed84d83ae73cf64978c8d99e69e"
 		}
 	]
 }

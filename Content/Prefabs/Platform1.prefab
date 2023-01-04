@@ -1,0 +1,63 @@
+{
+	"ID": "b060bf194ad2ac25e4c29b9f4295715b",
+	"TypeName": "FlaxEngine.Prefab",
+	"EngineBuild": 6334,
+	"Data": [
+	{
+		"ID": "b73ac3634b9ed37da0daf68969721e1e",
+		"TypeName": "FlaxEngine.RigidBody",
+		"ParentID": "00000000000000000000000000000000",
+		"Name": "Platform1",
+		"OverrideMass": true,
+		"Constraints": 63,
+		"EnableGravity": false
+	},
+	{
+		"ID": "7c89065d408d379aa235c7869bb9ea81",
+		"TypeName": "FlaxEngine.StaticModel",
+		"ParentID": "b73ac3634b9ed37da0daf68969721e1e",
+		"Name": "Cube",
+		"Transform": {
+			"Translation": {
+				"X": 530.2399291992188,
+				"Y": 74.4561767578125,
+				"Z": -420.2071228027344
+			},
+			"Scale": {
+				"X": 1.0,
+				"Y": 0.3100000023841858,
+				"Z": 1.0
+			}
+		},
+		"Model": "b43f0f8f4aaba3f3156896a5a22ba493",
+		"Buffer": {
+			"Entries": [
+				{
+					"Material": "00000000000000000000000000000000",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				}
+			]
+		}
+	},
+	{
+		"ID": "ab1f3a884a1a27a6a2df918a97a7b79b",
+		"TypeName": "FlaxEngine.BoxCollider",
+		"ParentID": "b73ac3634b9ed37da0daf68969721e1e",
+		"Name": "Collider",
+		"Transform": {
+			"Translation": {
+				"X": 530.2399291992188,
+				"Y": 74.4561767578125,
+				"Z": -420.2071228027344
+			},
+			"Scale": {
+				"X": 1.0,
+				"Y": 0.3100000023841858,
+				"Z": 1.0
+			}
+		}
+	}
+]
+}

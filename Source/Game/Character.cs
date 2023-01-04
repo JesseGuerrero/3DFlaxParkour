@@ -98,8 +98,10 @@ namespace Game
 
             // Character Movement
             {
+                CharacterObj.As<AnimatedModel>().SetParameterValue("Backward", false);
                 CharacterObj.As<AnimatedModel>().SetParameterValue("Jump", false);
                 CharacterObj.As<AnimatedModel>().SetParameterValue("Walk", false);
+                CharacterObj.As<AnimatedModel>().SetParameterValue("Run", false);
                 
                 // Get input axes
                 var inputH = Input.GetAxis("Horizontal");
@@ -111,14 +113,23 @@ namespace Game
 
                 // Jump if the space bar is down, jump
                 
-                if (_controller.IsGrounded && Input.GetAction("Jump"))
+                if (_controller.IsGrounded && Input.GetAction("Jump") && inputV >=0)
                 {
                     _velocity.Y = Mathf.Sqrt(JumpStrength * -2f * Gravity);
-                    CharacterObj.As<AnimatedModel>().SetParameterValue("Jump", true);
                 }
+                if(_velocity.Y > 0)
+                    CharacterObj.As<AnimatedModel>().SetParameterValue("Jump", true);
                 if (inputV > 0 && _controller.IsGrounded)
                 {
-                    CharacterObj.As<AnimatedModel>().SetParameterValue("Walk", true);
+                    if(Input.GetAction("Sprint"))
+                        CharacterObj.As<AnimatedModel>().SetParameterValue("Run", true);
+                    else
+                        CharacterObj.As<AnimatedModel>().SetParameterValue("Walk", true);
+                }
+                
+                if (inputV < 0 && _controller.IsGrounded)
+                {
+                    CharacterObj.As<AnimatedModel>().SetParameterValue("Backward", true);
                 }
                 
                 
@@ -128,7 +139,7 @@ namespace Game
                 movementDirection += (_velocity * 0.5f);
 
                 // Apply controller movement, evaluate whether we are sprinting or not
-                _controller.Move(movementDirection * Time.DeltaTime * (Input.GetAction("Sprint") ? SprintSpeed : Speed));
+                _controller.Move(movementDirection * Time.DeltaTime * ((Input.GetAction("Sprint") && inputV > 0) ? SprintSpeed : inputV < 0 ? Speed/2 : Speed));
             }
         }
     }
