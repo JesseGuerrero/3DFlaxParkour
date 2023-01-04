@@ -98,19 +98,30 @@ namespace Game
 
             // Character Movement
             {
+                CharacterObj.As<AnimatedModel>().SetParameterValue("Jump", false);
+                CharacterObj.As<AnimatedModel>().SetParameterValue("Walk", false);
+                
                 // Get input axes
                 var inputH = Input.GetAxis("Horizontal");
                 var inputV = Input.GetAxis("Vertical");
-
+                
                 // Apply movement towards the camera direction
                 var movement = new Vector3(inputH, 0.0f, inputV);
                 var movementDirection = CameraView.Transform.TransformDirection(movement);
 
                 // Jump if the space bar is down, jump
+                
                 if (_controller.IsGrounded && Input.GetAction("Jump"))
                 {
                     _velocity.Y = Mathf.Sqrt(JumpStrength * -2f * Gravity);
+                    CharacterObj.As<AnimatedModel>().SetParameterValue("Jump", true);
                 }
+                if (inputV > 0 && _controller.IsGrounded)
+                {
+                    CharacterObj.As<AnimatedModel>().SetParameterValue("Walk", true);
+                }
+                
+                
 
                 // Apply gravity
                 _velocity.Y += Gravity * Time.DeltaTime;

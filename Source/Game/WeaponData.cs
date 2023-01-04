@@ -13,8 +13,8 @@ namespace Game
         [Range(1000, 10000), EditorOrder(1), EditorDisplay("Weapon Data")]
         public float BulletVelocity = 1000f;
 
-        [Limit(0, 20), EditorOrder(2), EditorDisplay("Weapon Data")]
-        public int BulletLifetime = 10;
+        [Limit(0, 999999999), EditorOrder(2), EditorDisplay("Weapon Data")]
+        public int BulletLifetime = 999999999;
 
         [EditorOrder(3), EditorDisplay("Weapon Data")]
         public Model BulletModel;

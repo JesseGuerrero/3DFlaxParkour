@@ -1,11 +1,11 @@
 {
 	"ID": "922c917c4f978946baa3d4909c80020e",
 	"TypeName": "Game.WeaponData",
-	"EngineBuild": 6215,
+	"EngineBuild": 6334,
 	"Data": {
 	"FireRate": 10.0,
-	"BulletVelocity": 2000.0,
-	"BulletLifetime": 10,
+	"BulletVelocity": 2900.0,
+	"BulletLifetime": 999999999,
 	"BulletModel": "dd86c4724bf734c4959d23b3c74faa05",
 	"BulletScale": {
 		"X": 0.1,

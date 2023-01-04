@@ -1,7 +1,7 @@
 {
 	"ID": "74a68a984824b4510d12589f199ad68f",
 	"TypeName": "FlaxEngine.SceneAsset",
-	"EngineBuild": 6215,
+	"EngineBuild": 6334,
 	"Data": [
 		{
 			"ID": "74a68a984824b4510d12589f199ad68f",
@@ -360,20 +360,6 @@
 			"StaticFlags": 0
 		},
 		{
-			"ID": "70dfd2094d46feca96a05781a1ac9ec8",
-			"TypeName": "FlaxEngine.BoxCollider",
-			"ParentID": "554858c54f74094047103b95d3481ae6",
-			"Name": "BoxCollider 0",
-			"Transform": {
-				"Translation": {
-					"X": 0.0,
-					"Y": 0.0,
-					"Z": 1.81097412109375
-				}
-			},
-			"StaticFlags": 0
-		},
-		{
 			"ID": "0dbaf86247a88a378eac9dadc25dfb26",
 			"PrefabID": "d2e6df3843d12ebf0e7fa2b33c15826f",
 			"PrefabObjectID": "253a4fa54eabf286ee1925b2b02cdab5",
@@ -391,6 +377,20 @@
 					{}
 				]
 			}
+		},
+		{
+			"ID": "70dfd2094d46feca96a05781a1ac9ec8",
+			"TypeName": "FlaxEngine.BoxCollider",
+			"ParentID": "554858c54f74094047103b95d3481ae6",
+			"Name": "BoxCollider 0",
+			"Transform": {
+				"Translation": {
+					"X": 0.0,
+					"Y": 0.0,
+					"Z": 1.81097412109375
+				}
+			},
+			"StaticFlags": 0
 		},
 		{
 			"ID": "6a217e8243c3414d034dcfb3b5223485",
@@ -2051,7 +2051,7 @@
 			"TypeName": "Game.Character",
 			"ParentID": "3d5d480e47c4e5aa7108ddaad0c7ed67",
 			"V": {
-	"CharacterObj": "41dccecb443dddf8ca8951bec7c0d644",
+	"CharacterObj": "535d49a944ee26f2ec4a01a7daa51082",
 	"Speed": 200.0,
 	"JumpStrength": 1.0,
 	"CameraView": "097615424e695a5f2f892fb3ff07243c",
@@ -2060,65 +2060,10 @@
 }
 		},
 		{
-			"ID": "41dccecb443dddf8ca8951bec7c0d644",
-			"TypeName": "FlaxEngine.StaticModel",
+			"ID": "da307f594f3f902e37801ca36103a2cb",
+			"TypeName": "Game.InputController",
 			"ParentID": "3d5d480e47c4e5aa7108ddaad0c7ed67",
-			"Name": "Character",
-			"Transform": {
-				"Translation": {
-					"X": 0.0,
-					"Y": -50.0,
-					"Z": 0.0
-				}
-			},
-			"StaticFlags": 0,
-			"Model": "3f82e57744f57c28285150b646ad2198",
-			"Buffer": {
-				"Entries": [
-					{
-						"Material": "00000000000000000000000000000000",
-						"ShadowsMode": 3,
-						"Visible": true,
-						"ReceiveDecals": true
-					}
-				]
-			}
-		},
-		{
-			"ID": "4bb7dccc428df0a472678d8195107170",
-			"TypeName": "FlaxEngine.StaticModel",
-			"ParentID": "41dccecb443dddf8ca8951bec7c0d644",
-			"Name": "DealWithIt",
-			"Transform": {
-				"Translation": {
-					"X": 0.0,
-					"Y": 73.71049499511719,
-					"Z": 22.099990844726564
-				},
-				"Scale": {
-					"X": 0.75,
-					"Y": 1.0,
-					"Z": 0.699999988079071
-				}
-			},
-			"StaticFlags": 0,
-			"Model": "e1277d394333bb5c4df8efadef0c647b",
-			"Buffer": {
-				"Entries": [
-					{
-						"Material": "00000000000000000000000000000000",
-						"ShadowsMode": 3,
-						"Visible": true,
-						"ReceiveDecals": true
-					},
-					{
-						"Material": "00000000000000000000000000000000",
-						"ShadowsMode": 3,
-						"Visible": true,
-						"ReceiveDecals": true
-					}
-				]
-			}
+			"V": {}
 		},
 		{
 			"ID": "e1694e1b46f5f1c4c1c378b911692591",
@@ -2161,7 +2106,59 @@
 				}
 			},
 			"StaticFlags": 0,
-			"Model": "e460725d4504789a1ba76cb5b827b5e1",
+			"Buffer": {
+				"Entries": []
+			}
+		},
+		{
+			"ID": "e381211046438ce1de1cb3b2ab211a89",
+			"TypeName": "Game.Weapon",
+			"ParentID": "4a2ce6374424a237208cf8ad245b3f9f",
+			"V": {
+	"WeaponSettings": "922c917c4f978946baa3d4909c80020e",
+	"BulletSpawnPoint": "558dfa63445bf74e55a9ebac08dd4a5b"
+}
+		},
+		{
+			"ID": "558dfa63445bf74e55a9ebac08dd4a5b",
+			"TypeName": "FlaxEngine.EmptyActor",
+			"ParentID": "4a2ce6374424a237208cf8ad245b3f9f",
+			"Name": "ProjectileSpawn",
+			"Transform": {
+				"Translation": {
+					"X": -82.7171401977539,
+					"Y": 10.497055053710938,
+					"Z": -0.00000986065060715191
+				},
+				"Orientation": {
+					"X": 0.0,
+					"Y": -0.7071068286895752,
+					"Z": 0.0,
+					"W": 0.7071068286895752
+				}
+			},
+			"StaticFlags": 0
+		},
+		{
+			"ID": "535d49a944ee26f2ec4a01a7daa51082",
+			"TypeName": "FlaxEngine.AnimatedModel",
+			"ParentID": "3d5d480e47c4e5aa7108ddaad0c7ed67",
+			"Name": "Character",
+			"Transform": {
+				"Translation": {
+					"X": 0.0,
+					"Y": -52.04230499267578,
+					"Z": 0.0
+				},
+				"Scale": {
+					"X": 0.6000000238418579,
+					"Y": 0.6000000238418579,
+					"Z": 0.6000000238418579
+				}
+			},
+			"StaticFlags": 0,
+			"SkinnedModel": "dc86fd0e43724d02112c02be35ebe483",
+			"AnimationGraph": "d092fe6a4a80666456de9391477f88c1",
 			"Buffer": {
 				"Entries": [
 					{
@@ -2252,33 +2249,84 @@
 			}
 		},
 		{
-			"ID": "e381211046438ce1de1cb3b2ab211a89",
-			"TypeName": "Game.Weapon",
-			"ParentID": "4a2ce6374424a237208cf8ad245b3f9f",
-			"V": {
-	"WeaponSettings": "922c917c4f978946baa3d4909c80020e",
-	"BulletSpawnPoint": "558dfa63445bf74e55a9ebac08dd4a5b"
-}
+			"ID": "3ed75ed84d83ae73cf64978c8d99e69e",
+			"TypeName": "FlaxEngine.RigidBody",
+			"ParentID": "74a68a984824b4510d12589f199ad68f",
+			"Name": "RigidBody",
+			"OverrideMass": true
 		},
 		{
-			"ID": "558dfa63445bf74e55a9ebac08dd4a5b",
-			"TypeName": "FlaxEngine.EmptyActor",
-			"ParentID": "4a2ce6374424a237208cf8ad245b3f9f",
-			"Name": "ProjectileSpawn",
+			"ID": "7e69476b4faa4f00ef90098c23f94b9f",
+			"TypeName": "FlaxEngine.StaticModel",
+			"ParentID": "3ed75ed84d83ae73cf64978c8d99e69e",
+			"Name": "Cube",
 			"Transform": {
 				"Translation": {
-					"X": -82.7171401977539,
-					"Y": 10.497055053710938,
-					"Z": -0.00000986065060715191
+					"X": 530.2399291992188,
+					"Y": 74.4561767578125,
+					"Z": -420.2071228027344
 				},
-				"Orientation": {
-					"X": 0.0,
-					"Y": -0.7071068286895752,
-					"Z": 0.0,
-					"W": 0.7071068286895752
+				"Scale": {
+					"X": 1.0,
+					"Y": 0.3100000023841858,
+					"Z": 1.0
 				}
 			},
-			"StaticFlags": 0
+			"Model": "b43f0f8f4aaba3f3156896a5a22ba493",
+			"Buffer": {
+				"Entries": [
+					{
+						"Material": "00000000000000000000000000000000",
+						"ShadowsMode": 3,
+						"Visible": true,
+						"ReceiveDecals": true
+					}
+				]
+			}
+		},
+		{
+			"ID": "d95bfc5b4722f36527a9c9a95f341882",
+			"TypeName": "FlaxEngine.BoxCollider",
+			"ParentID": "3ed75ed84d83ae73cf64978c8d99e69e",
+			"Name": "BoxCollider"
+		},
+		{
+			"ID": "9ad5fadf4c44718f3a8b248d62056ad0",
+			"TypeName": "FlaxEngine.RigidBody",
+			"ParentID": "74a68a984824b4510d12589f199ad68f",
+			"Name": "RigidBody 0",
+			"OverrideMass": true,
+			"Constraints": 63,
+			"EnableGravity": false
+		},
+		{
+			"ID": "73e39515450ffbdc4c459fac7ccb945c",
+			"TypeName": "FlaxEngine.StaticModel",
+			"ParentID": "9ad5fadf4c44718f3a8b248d62056ad0",
+			"Name": "Cube",
+			"Transform": {
+				"Translation": {
+					"X": 530.2399291992188,
+					"Y": 156.41409301757813,
+					"Z": -266.32940673828127
+				},
+				"Scale": {
+					"X": 1.0,
+					"Y": 0.3100000023841858,
+					"Z": 1.0
+				}
+			},
+			"Model": "b43f0f8f4aaba3f3156896a5a22ba493",
+			"Buffer": {
+				"Entries": [
+					{
+						"Material": "00000000000000000000000000000000",
+						"ShadowsMode": 3,
+						"Visible": true,
+						"ReceiveDecals": true
+					}
+				]
+			}
 		}
 	]
 }
