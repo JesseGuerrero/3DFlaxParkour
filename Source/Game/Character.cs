@@ -53,6 +53,9 @@ namespace Game
         private float _pitch;
         private float _defaultFov;
 
+        private Animation StrafeLeft;
+        private Animation StrafeRight;
+        private Animation IdleAnim;
         public override void OnStart()
         {
             // Get Controller, since its the parent we just need to cast
@@ -64,6 +67,10 @@ namespace Game
             }
 
             _defaultFov = CameraView.FieldOfView;
+
+            StrafeLeft = (Animation)CharacterObj.As<AnimatedModel>().GetParameter("StrafeLeft").Value;
+            StrafeRight = (Animation)CharacterObj.As<AnimatedModel>().GetParameter("StrafeRight").Value;
+            IdleAnim = (Animation)CharacterObj.As<AnimatedModel>().GetParameter("Idle").Value;
         }
 
         public override void OnUpdate()
@@ -98,17 +105,12 @@ namespace Game
 
             // Character Movement
             {
-                CharacterObj.As<AnimatedModel>().SetParameterValue("Backward", false);
-                CharacterObj.As<AnimatedModel>().SetParameterValue("Jump", false);
-                CharacterObj.As<AnimatedModel>().SetParameterValue("Walk", false);
-                CharacterObj.As<AnimatedModel>().SetParameterValue("Run", false);
-                
                 // Get input axes
                 var inputH = Input.GetAxis("Horizontal");
                 var inputV = Input.GetAxis("Vertical");
                 
                 // Apply movement towards the camera direction
-                var movement = new Vector3(inputH, 0.0f, inputV);
+                var movement = new Vector3(inputV < 0f ? 0f : inputH, 0.0f, inputV);
                 var movementDirection = CameraView.Transform.TransformDirection(movement);
 
                 // Jump if the space bar is down, jump
@@ -117,29 +119,55 @@ namespace Game
                 {
                     _velocity.Y = Mathf.Sqrt(JumpStrength * -2f * Gravity);
                 }
-                if(_velocity.Y > 0)
-                    CharacterObj.As<AnimatedModel>().SetParameterValue("Jump", true);
-                if (inputV > 0 && _controller.IsGrounded)
-                {
-                    if(Input.GetAction("Sprint"))
-                        CharacterObj.As<AnimatedModel>().SetParameterValue("Run", true);
-                    else
-                        CharacterObj.As<AnimatedModel>().SetParameterValue("Walk", true);
-                }
                 
-                if (inputV < 0 && _controller.IsGrounded)
-                {
-                    CharacterObj.As<AnimatedModel>().SetParameterValue("Backward", true);
-                }
-                
-                
-
                 // Apply gravity
-                _velocity.Y += Gravity * Time.DeltaTime;
+                if(!_controller.IsGrounded)
+                    _velocity.Y += Gravity * Time.DeltaTime;
+                Animate(inputH, inputV);
                 movementDirection += (_velocity * 0.5f);
 
                 // Apply controller movement, evaluate whether we are sprinting or not
                 _controller.Move(movementDirection * Time.DeltaTime * ((Input.GetAction("Sprint") && inputV > 0) ? SprintSpeed : inputV < 0 ? Speed/2 : Speed));
+            }
+        }
+
+        private void Animate(float xSpeed, float ySpeed)
+        {
+            AnimatedModel character = CharacterObj.As<AnimatedModel>();
+            character.SetParameterValue("Backward", false);
+            character.SetParameterValue("Jump", false);
+            character.SetParameterValue("Walk", false);
+            character.SetParameterValue("Run", false);
+            character.SetParameterValue("IsMovingLeft", false);
+            character.SetParameterValue("Strafe", 0f);
+            
+            if(_velocity.Y > 0)
+                character.SetParameterValue("Jump", true);
+            if (_controller.IsGrounded)
+            {
+                if (ySpeed < 0)
+                {
+                    character.SetParameterValue("Backward", true);
+                }
+                
+                //Strafe and walk
+                if (ySpeed > 0)
+                {
+                    if (Input.GetAction("Sprint"))
+                        character.SetParameterValue("Run", true);
+                    else
+                        character.SetParameterValue("Walk", true);
+                }
+                if (xSpeed < 0 || xSpeed > 0)
+                {
+                    if(ySpeed == 0)
+                        character.SetParameterValue("Strafe", 1f);
+                    if(ySpeed > 0)
+                        character.SetParameterValue("Strafe", 0.78f);
+                }
+                if(xSpeed > 0)
+                    character.SetParameterValue("IsMovingLeft", true);
+                
             }
         }
     }

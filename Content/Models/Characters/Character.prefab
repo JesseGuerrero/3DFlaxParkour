@@ -1,0 +1,223 @@
+{
+	"ID": "17a9078b4e471d688e838a97b4b85714",
+	"TypeName": "FlaxEngine.Prefab",
+	"EngineBuild": 6334,
+	"Data": [
+	{
+		"ID": "feb97a4e4f6d7cdef3b3e5811cdbff86",
+		"TypeName": "FlaxEngine.CharacterController",
+		"ParentID": "00000000000000000000000000000000",
+		"Name": "CharacterController",
+		"Transform": {
+			"Translation": {
+				"X": 260.3531799316406,
+				"Y": 55.5609130859375,
+				"Z": -334.5616760253906
+			}
+		},
+		"StaticFlags": 0,
+		"Layer": 1,
+		"Tag": "Player",
+		"Material": "38b53c054812183ddbf74d918b64b23b",
+		"NonWalkableMode": 1,
+		"Radius": 30.0,
+		"Height": 40.0
+	},
+	{
+		"ID": "bdd429aa487a06f0f65f73af90025b92",
+		"TypeName": "Game.Character",
+		"ParentID": "feb97a4e4f6d7cdef3b3e5811cdbff86",
+		"V": {
+			"CharacterObj": "82ead67d4fdea925cfb7009dd99acd7b",
+			"Speed": 200.0,
+			"JumpStrength": 1.0,
+			"CameraView": "7a0bf1124acaec203e8dc189141f5a76",
+			"MouseSensitivity": 3.08086538,
+			"CameraLag": 12.3620024
+		}
+	},
+	{
+		"ID": "51337c914c999b711c10faa4a058bd23",
+		"TypeName": "FlaxEngine.EmptyActor",
+		"ParentID": "feb97a4e4f6d7cdef3b3e5811cdbff86",
+		"Name": "CameraSocket",
+		"StaticFlags": 0
+	},
+	{
+		"ID": "7a0bf1124acaec203e8dc189141f5a76",
+		"TypeName": "FlaxEngine.Camera",
+		"ParentID": "51337c914c999b711c10faa4a058bd23",
+		"Name": "TPSCamera",
+		"Transform": {
+			"Translation": {
+				"X": 45.0,
+				"Y": 49.99999237060547,
+				"Z": -150.0
+			}
+		},
+		"StaticFlags": 0,
+		"FOV": 80.0
+	},
+	{
+		"ID": "04dc052f4a2f82b703e1e0bd0e2db758",
+		"TypeName": "FlaxEngine.StaticModel",
+		"ParentID": "51337c914c999b711c10faa4a058bd23",
+		"Name": "Weapon (AK-74)",
+		"Transform": {
+			"Translation": {
+				"X": 30.09663772583008,
+				"Y": 0.0,
+				"Z": 30.126441955566408
+			},
+			"Orientation": {
+				"X": 0.0,
+				"Y": 0.7071068286895752,
+				"Z": 0.0,
+				"W": 0.7071068286895752
+			}
+		},
+		"StaticFlags": 0,
+		"Buffer": {
+			"Entries": []
+		}
+	},
+	{
+		"ID": "82dcd9f2480f119efd73b8982d81cafd",
+		"TypeName": "Game.Weapon",
+		"ParentID": "04dc052f4a2f82b703e1e0bd0e2db758",
+		"V": {
+			"WeaponSettings": "922c917c4f978946baa3d4909c80020e",
+			"BulletSpawnPoint": "bc677ba54fa7cf3731ad9388e95cd16a"
+		}
+	},
+	{
+		"ID": "bc677ba54fa7cf3731ad9388e95cd16a",
+		"TypeName": "FlaxEngine.EmptyActor",
+		"ParentID": "04dc052f4a2f82b703e1e0bd0e2db758",
+		"Name": "ProjectileSpawn",
+		"Transform": {
+			"Translation": {
+				"X": -82.7171401977539,
+				"Y": 10.497055053710938,
+				"Z": -0.00000986065060715191
+			},
+			"Orientation": {
+				"X": 0.0,
+				"Y": -0.7071068286895752,
+				"Z": 0.0,
+				"W": 0.7071068286895752
+			}
+		},
+		"StaticFlags": 0
+	},
+	{
+		"ID": "82ead67d4fdea925cfb7009dd99acd7b",
+		"TypeName": "FlaxEngine.AnimatedModel",
+		"ParentID": "feb97a4e4f6d7cdef3b3e5811cdbff86",
+		"Name": "Character",
+		"Transform": {
+			"Translation": {
+				"X": 0.0,
+				"Y": -52.04230499267578,
+				"Z": 0.0
+			},
+			"Scale": {
+				"X": 0.6000000238418579,
+				"Y": 0.6000000238418579,
+				"Z": 0.6000000238418579
+			}
+		},
+		"StaticFlags": 0,
+		"SkinnedModel": "dc86fd0e43724d02112c02be35ebe483",
+		"AnimationGraph": "d092fe6a4a80666456de9391477f88c1",
+		"Buffer": {
+			"Entries": [
+				{
+					"Material": "00000000000000000000000000000000",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				},
+				{
+					"Material": "00000000000000000000000000000000",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				},
+				{
+					"Material": "00000000000000000000000000000000",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				},
+				{
+					"Material": "00000000000000000000000000000000",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				},
+				{
+					"Material": "00000000000000000000000000000000",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				},
+				{
+					"Material": "00000000000000000000000000000000",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				},
+				{
+					"Material": "00000000000000000000000000000000",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				},
+				{
+					"Material": "00000000000000000000000000000000",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				},
+				{
+					"Material": "00000000000000000000000000000000",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				},
+				{
+					"Material": "00000000000000000000000000000000",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				},
+				{
+					"Material": "00000000000000000000000000000000",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				},
+				{
+					"Material": "00000000000000000000000000000000",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				},
+				{
+					"Material": "00000000000000000000000000000000",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				},
+				{
+					"Material": "00000000000000000000000000000000",
+					"ShadowsMode": 3,
+					"Visible": true,
+					"ReceiveDecals": true
+				}
+			]
+		}
+	}
+]
+}
